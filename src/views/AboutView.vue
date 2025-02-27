@@ -1,6 +1,6 @@
 <template>
   <div class="about">
-    <h1>This is an about page</h1>
+    <h2 class="text-center">This is an about page</h2>
   </div>
 </template>
 
@@ -11,5 +11,8 @@
     display: flex;
     align-items: center;
   }
+}
+.text-center{
+  text-align: center;
 }
 </style>

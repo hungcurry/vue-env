@@ -1,7 +1,7 @@
 import { ref  } from 'vue';
 import axios from 'axios';
 
-let apiServer = '/server/api'
+let apiServer = '/server/api2'
 const handleChangeAPI = () => {
   console.log(`env:`, import.meta.env )
   let { VITE_API } = import.meta.env
@@ -20,7 +20,7 @@ export const useApiServer = () =>{
 
   const FetchInit = async(url) =>{
     const apiUrl = apiServer + url
-    console.log(`apiUrl:`, apiUrl)
+    console.log(`apiUrl:`, apiUrl)  // /server/api/users
     // FullapiUrl = 'https://localdb-1w4g.onrender.com/api/users'
 
     try {
@@ -28,7 +28,7 @@ export const useApiServer = () =>{
       data.value = res.data.data
     }
     catch (error) {
-      console.log('catch', error.message);
+      console.log('catch', error);
       errorMessage.value = "API 發生錯誤"
     }
   }

@@ -7,7 +7,7 @@ import vueDevTools from 'vite-plugin-vue-devtools';
 export default defineConfig(({ mode }) => {
   // 載入對應環境的 `.env` 檔案
   const env = loadEnv(mode, '.');
-  const { VITE_NAME, VITE_MINIFY, VITE_API_URL } = env;
+  const { VITE_NAME, VITE_MINIFY, VITE_API_URL ,VITE_BASE_URL } = env;
 
   console.log({
     環境: VITE_NAME,
@@ -15,6 +15,7 @@ export default defineConfig(({ mode }) => {
   });
 
   return {
+    base: VITE_BASE_URL  || '/',
     plugins: [vue(), vueDevTools()],
     resolve: {
       alias: {
@@ -31,7 +32,7 @@ export default defineConfig(({ mode }) => {
         },
       },
       open: true,
-      port: 4040,
+      port: 5080,
       host: '0.0.0.0',
       hmr: true,
     },
