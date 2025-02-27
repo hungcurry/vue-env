@@ -7,7 +7,7 @@ import vueDevTools from 'vite-plugin-vue-devtools';
 export default defineConfig(({ mode }) => {
   // 載入對應環境的 `.env` 檔案
   const env = loadEnv(mode, '.');
-  const { VITE_NAME, VITE_MINIFY, VITE_API_URL ,VITE_BASE_URL } = env;
+  const { VITE_NAME, VITE_MINIFY, VITE_API_URL } = env;
 
   console.log({
     環境: VITE_NAME,
