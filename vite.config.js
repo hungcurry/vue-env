@@ -15,7 +15,8 @@ export default defineConfig(({ mode }) => {
   });
 
   return {
-    base: VITE_BASE_URL  || '/',
+    // base: VITE_BASE_URL  || '/',
+    base: '/',
     plugins: [vue(), vueDevTools()],
     resolve: {
       alias: {
@@ -38,7 +39,10 @@ export default defineConfig(({ mode }) => {
     },
     build: {
       // 根據環境設定輸出目錄
-      outDir: `dist/${VITE_NAME}`,
+      // outDir: `dist/${VITE_NAME}`,
+      build: {
+        outDir: 'dist'
+      },
       // 使用環境變數設定壓縮方式
       minify: VITE_MINIFY,
       // 添加構建優化選項
