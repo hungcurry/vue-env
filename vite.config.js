@@ -37,25 +37,25 @@ export default defineConfig(({ mode }) => {
       host: '0.0.0.0',
       hmr: true,
     },
-    build: {
-      // 根據環境設定輸出目錄
-      // outDir: `dist/${VITE_NAME}`,
-      build: {
-        outDir: 'dist'
-      },
-      // 使用環境變數設定壓縮方式
-      minify: VITE_MINIFY,
-      // 添加構建優化選項
-      target: 'esnext',
-      cssCodeSplit: true,
-      sourcemap: mode === 'development',
-      // 清除console和debugger
-      terserOptions: {
-        compress: {
-          drop_console: mode === 'production',
-          drop_debugger: mode === 'production'
-        }
-      }
-    }
+    // build: {
+    //   // 根據環境設定輸出目錄
+    //   // outDir: `dist/${VITE_NAME}`,
+    //   build: {
+    //     outDir: 'dist'
+    //   },
+    //   // 使用環境變數設定壓縮方式
+    //   minify: VITE_MINIFY,
+    //   // 添加構建優化選項
+    //   target: 'esnext',
+    //   cssCodeSplit: true,
+    //   sourcemap: mode === 'development',
+    //   // 清除console和debugger
+    //   terserOptions: {
+    //     compress: {
+    //       drop_console: mode === 'production',
+    //       drop_debugger: mode === 'production'
+    //     }
+    //   }
+    // }
   };
 });
