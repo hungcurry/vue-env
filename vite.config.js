@@ -46,7 +46,7 @@ export default defineConfig(({ mode }) => {
       // 使用環境變數設定壓縮方式
       minify: VITE_MINIFY,
       // 添加構建優化選項
-      target: 'es2015',
+      target: 'esnext',
       cssCodeSplit: true,
       sourcemap: mode === 'development',
       // 清除console和debugger
