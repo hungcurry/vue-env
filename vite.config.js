@@ -15,8 +15,8 @@ export default defineConfig(({ mode }) => {
   });
 
   return {
-    // base: VITE_BASE_URL  || '/',
-    base: '/',
+    base: VITE_NAME  || '/',
+    // base: '/',
     plugins: [vue(), vueDevTools()],
     resolve: {
       alias: {
