@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "run-p dev:serve dev:look",
-    "dev:serve": "vite --mode dev --open",
+    "dev:serve": "vite --mode devWatch --open",
     "dev:look": "vite build --mode devWatch",
     "build-all": "run-p build:prod build:test build:dev",
     "build:dev": "vite build --mode dev",
