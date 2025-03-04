@@ -7,7 +7,7 @@ import vueDevTools from 'vite-plugin-vue-devtools';
 export default defineConfig(({ mode }) => {
   // 載入對應環境的 `.env` 檔案
   const env = loadEnv(mode, '.');
-  const { VITE_NAME, VITE_MINIFY, VITE_API_URL } = env;
+  const { VITE_NAME, VITE_MINIFY, VITE_API_URL , VITE_BASE_URL } = env;
 
   console.log({
     環境: VITE_NAME,
@@ -15,7 +15,7 @@ export default defineConfig(({ mode }) => {
   });
 
   return {
-    base: VITE_NAME  || '/',
+    base: VITE_BASE_URL  || '/',
     // base: '/',
     plugins: [vue(), vueDevTools()],
     resolve: {
@@ -39,7 +39,7 @@ export default defineConfig(({ mode }) => {
     },
     build: {
       // 根據環境設定輸出目錄
-      outDir: `dist/${VITE_NAME}`,
+      outDir: `dist/${VITE_BASE_URL}`,
       // 使用環境變數設定壓縮方式
       minify: VITE_MINIFY,
       // 添加構建優化選項
